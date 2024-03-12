@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Novado</title>
+    <script
+      src="https://kit.fontawesome.com/2d3e948390.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="images/rocket.svg" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <main>
+      <section class="logo">
+        <img src="images/Logo.svg" alt="logo" class="logo__img" />
+      </section>
+      <section class="inputs">
+        <input
+          type="text"
+          class="inputs__input-text"
+          placeholder="ცხოვრების რა ნაწილის დაგეგმვა გსურს?"
+        />
+        <button class="inputs__add">
+          დამატება <img src="images/plus.svg" alt="plus" />
+        </button>
+      </section>
+      <section class="tasks">
+        <div class="tasks__task-numbers">
+          <div class="tasks__left tasks--name">
+            <p class="tasks__left-text tasks__text">დავალებები</p>
+            <div class="task-count">0</div>
+          </div>
+          <div class="tasks__right tasks--name">
+            <p class="tasks__right-text tasks__text">დასრულებული</p>
+            <div class="task-count">0</div>
+          </div>
+        </div>
+
+        <div class="tasks__tasks">
+          <ul class="tasks-list">
+            <!-- <li class="tasks-list__task">
+              <div class="task-list__task-left">
+                <input type="checkbox" class="task-list__done" />
+                <p>დავალება 1</p>
+              </div>
+              <i class="fa-regular fa-trash-can task-list__delete"></i>
+            </li> -->
+          </ul>
+          <div class="tasks__no-tasks">
+            <img src="images/Clipboard.svg" alt="Clipboard" />
+            <div>
+              <p class="tasks__par tasks__par--bold">დავალებები ჯერ არ გაქვთ</p>
+              <p class="tasks__par">
+                შექმენით დავალებები და დაიწყეთ თქვენი ცხოვრების დაორგანიზება
+                ჩვენთან ერთად
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

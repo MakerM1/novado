@@ -1,0 +1,236 @@
+body {
+    background-color: #1a1a1a;
+    background-image: url('../images/Background.svg');
+    background-repeat: repeat-x;
+    background-position: left top;
+    font-family: "Noto Sans Georgian", sans-serif;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.logo {
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.logo__img {
+    max-width: 183px;
+    width: 100%;
+}
+
+.inputs {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: -28px;
+    padding: 0 20px;
+    flex-wrap: wrap;
+    margin-bottom: 65px;
+}
+
+.inputs__input-text {
+    max-width: 598px;
+    width: 100%;
+    padding: 16px;
+    background-color: #262626;
+    color: white;
+    border-radius: 8px;
+    outline: none;
+    border: 2px solid transparent;
+    transition: all 0.2s;
+}
+
+.inputs__input-text:focus {
+    border: 2px solid white;
+}
+
+.inputs__input-text::placeholder {
+    color: #808080;
+}
+
+
+.inputs__add {
+    background-color: #1e6f9f;
+    color: white;
+    font-weight: 600;
+    padding: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.inputs__add:hover {
+    background-color: #278bc5;
+}
+
+.inputs__add:active {
+    background-color: #1f6690;
+}
+
+
+@media screen and (max-width: 786px) {
+    .inputs {
+        flex-direction: column;
+    }
+
+    .inputs__input-text {
+        max-width: 100%;
+    }
+
+    .inputs__add {
+        justify-content: center;
+    }
+}
+
+.tasks {
+    max-width: 736px;
+    width: 100%;
+}
+
+.tasks__task-numbers {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+.tasks--name {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.task-count {
+    background-color: #333333;
+    padding: 2px 8px;
+    color: white;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.tasks__text {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.tasks__left-text {
+    color: #4ea8de;
+}
+
+.tasks__right-text {
+    color: #8284fa;
+}
+
+.tasks__tasks {
+    width: 100%;
+    display: flex;
+    min-height: 266px;
+    align-items: center;
+    flex-direction: column;
+    gap: 16px;
+    border-top: 1px solid #808080;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.tasks__tasks:has(li) {
+    border-top: 1px solid transparent;
+}
+
+.tasks__no-tasks {
+    min-height: 266px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.tasks__par {
+    font-size: 16px;
+    line-height: 1.4;
+    text-align: center;
+    color: #808080;
+    max-width: 586px;
+    width: 100%;
+}
+
+.tasks__par--bold {
+    font-weight: bold;
+}
+
+.tasks-list {
+    width: 100%;
+}
+
+.tasks-list:has(li)+div {
+    display: none;
+}
+
+.tasks-list__task {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+    gap: 12px;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.06);
+    border: solid 1px #333;
+    background-color: #262626;
+}
+
+.task-list__task-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: white;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.task-list__delete {
+    color: #808080;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.2s;
+}
+
+.task-list__delete:hover {
+    color: rgb(239, 96, 96);
+}
+
+.task-list__done {
+    width: 19.3px;
+    height: 19.3px;
+    border-radius: 50%;
+    border: 2px solid #4ea8de;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.task-list__done:checked {
+    appearance: auto;
+    clip-path: circle(50% at 50% 50%);
+    background-color: #5e60ce;
+    accent-color: #5e60ce;
+}
+
+.task-list__done:checked+p {
+    text-decoration: line-through;
+    color: #808080;
+}
