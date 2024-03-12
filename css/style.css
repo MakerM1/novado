@@ -102,6 +102,15 @@ main {
     display: flex;
     justify-content: space-between;
     margin-bottom: 24px;
+    padding: 0 15px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+@media screen and (max-width: 315px) {
+    .tasks__task-numbers {
+        justify-content: center;
+    }
 }
 
 .tasks--name {
@@ -142,6 +151,7 @@ main {
     border-top: 1px solid #808080;
     border-radius: 8px;
     transition: all 0.2s;
+    padding: 0 15px;
 }
 
 .tasks__tasks:has(li) {
@@ -172,6 +182,10 @@ main {
 
 .tasks-list {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 12px;
 }
 
 .tasks-list:has(li)+div {
