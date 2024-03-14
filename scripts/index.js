@@ -5,6 +5,7 @@ const toDo = document.getElementById('toDo')
 const done = document.getElementById('done')
 
 let toDoCount = 0
+let doneCount = 0;
 
 function addTask() {
     if (taskInput.value !== '') {
@@ -13,14 +14,30 @@ function addTask() {
         taskList.innerHTML += `
         <li class="tasks-list__task">
         <div class="task-list__task-left">
-          <input type="checkbox" class="task-list__done" />
+          <input type="checkbox" class="task-list__done check" onchange="checkTask(event)" />
           <p>${taskInput.value}</p>
         </div>
-        <i class="fa-regular fa-trash-can task-list__delete"></i>
+        <i class="fa-regular fa-trash-can task-list__delete" onclick="deleteTask()"></i>
       </li>
         `;
         toDo.innerHTML = toDoCount;
+        done.innerHTML = `${doneCount} / ${toDoCount}`
     }
+}
+
+function checkTask(e) {
+  console.log('hi');
+  if (e.target.checked === true) {
+    doneCount++
+    done.innerHTML = `${doneCount} / ${toDoCount}`
+  } else {
+    doneCount--
+    done.innerHTML = `${doneCount} / ${toDoCount}`
+  }
+}
+
+function deleteTask() {
+  let tasks = document.querySelectorAll('.tasks-list__task')
 }
 
 taskAddButton.addEventListener('click', () => addTask())
@@ -30,3 +47,4 @@ taskInput.addEventListener('keypress', (e) => {
         addTask()
     }
 })
+
