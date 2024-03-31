@@ -17,7 +17,7 @@ function addTask() {
           <input type="checkbox" class="task-list__done check" onchange="checkTask(event)" />
           <p>${taskInput.value}</p>
         </div>
-        <i class="fa-regular fa-trash-can task-list__delete" onclick="deleteTask()"></i>
+        <i class="fa-regular fa-trash-can task-list__delete" onclick="deleteTask(this)"></i>
       </li>
         `;
         toDo.innerHTML = toDoCount;
@@ -36,8 +36,15 @@ function checkTask(e) {
   }
 }
 
-function deleteTask() {
-  let tasks = document.querySelectorAll('.tasks-list__task')
+function deleteTask(item) {
+  item.parentElement.style.display = 'none'
+  toDoCount--
+  if (item.parentElement.querySelector('.check').checked) {
+    doneCount--
+  }
+  toDo.innerHTML = toDoCount;
+  done.innerHTML = `${doneCount} / ${toDoCount}`
+
 }
 
 taskAddButton.addEventListener('click', () => addTask())
